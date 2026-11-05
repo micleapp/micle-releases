@@ -3,7 +3,8 @@ const MICLE = {
   version: '3.37.0',
   sizeMB: 83,          // Micle.exe の大きさ（MB）
   download: 'https://github.com/micleapp/micle-releases/releases/latest/download/Micle.exe',
-  buy: '',             // Lemon Squeezy の購入ページ（できたら入れる。空の間は「準備中」）
+  buy: '',
+  supabase: {url: '', anon: ''},   // アカウント（Supabase のプロジェクトの URL と anon キー。公開してよい鍵）             // Lemon Squeezy の購入ページ（できたら入れる。空の間は「準備中」）
   contact: 'https://docs.google.com/forms/d/e/1FAIpQLSfHNVmtSDxUMFfSJxF3mRXcln_wpAh4bhPPAPuHX0YEeMHXQA/viewform',
   mail: 'micleapp@gmail.com',
   // クリエイターを応援する方法（できたら足す。例：{name: 'Ko-fi', url: 'https://ko-fi.com/…'}）。空の間は「準備中」

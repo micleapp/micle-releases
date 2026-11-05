@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>アカウント — Micle</title>
+<link rel="icon" href="../img/favicon.png"><link rel="stylesheet" href="../style.css">
+<style>
+.acbox{max-width:440px;margin:60px auto;padding:0 16px}.acbox h1{font-size:24px}.acbox label{display:block;font-size:14px;color:var(--sub);margin:14px 0 4px}
+.acbox input{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:10px;border:1px solid var(--line,#2a3040);background:var(--panel,#171b24);color:inherit;font:inherit}
+.acbox .msg{margin-top:14px;font-weight:600}.acbox .bad{color:#ff6b6b}.acbox .ok{color:#5fd38d}
+</style></head>
+<body>
+<main class="acbox">
+  <h1>Micle のアカウント</h1>
+  <div id="view"><p>読み込んでいます…</p></div>
+  <p class="small" style="margin-top:28px"><a href="../">Micle のページへ</a></p>
+</main>
+<script src="../site.js"></script>
+<script>
+(function () {
+  // メールのリンク（確認・パスワードの決め直し）から開いた時の画面。必要な物はアドレスの # の後ろに入っている
+  const v = document.getElementById('view');
+  const cfg = (window.MICLE && MICLE.supabase) || {};
+  const h = new URLSearchParams(location.hash.slice(1));
+  const err = h.get('error_description');
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+  history.replaceState(null, '', location.pathname);   // 鍵の入ったアドレスを残さない
+  if (err) { v.innerHTML = '<p class="bad">' + esc(/expired|invalid/i.test(err) ? 'リンクの期限が切れたか、もう使われています。Micle からもう一度送ってください。' : err) + '</p>'; return; }
+  const type = h.get('type'), token = h.get('access_token');
+  if (!token) { v.innerHTML = '<p>このページは、Micle から届いたメールのリンクで開きます。</p>'; return; }
+  if (type === 'signup' || type === 'email_change' || type === 'magiclink') {
+    v.innerHTML = '<p class="ok">' + (type === 'email_change' ? 'メールアドレスを変えました。' : 'メールアドレスを確かめました。') + '</p><p>Micle に戻って、設定 → アカウント からログインしてください。このページは閉じて大丈夫です。</p>';
+    return;
+  }
+  if (type === 'recovery') {
+    v.innerHTML = '<p>新しいパスワードを決めてください（8文字以上で、英字と数字をまぜる）。</p><label>新しいパスワード</label><input type="password" id="p1" autocomplete="new-password"><label>もう一度</label><input type="password" id="p2" autocomplete="new-password"><p><button class="btn pri" id="go">決める</button></p><div class="msg" id="m"></div>';
+    const m = document.getElementById('m');
+    document.getElementById('go').onclick = async () => {
+      const a = document.getElementById('p1').value, b = document.getElementById('p2').value;
+      if (a !== b) { m.className = 'msg bad'; m.textContent = '2回とも同じにしてください'; return; }
+      if (a.length < 8 || !/[A-Za-z]/.test(a) || !/[0-9]/.test(a)) { m.className = 'msg bad'; m.textContent = '8文字以上で、英字と数字をまぜてください'; return; }
+      if (!cfg.url || !cfg.anon) { m.className = 'msg bad'; m.textContent = 'まだ準備中です'; return; }
+      m.className = 'msg'; m.textContent = '送っています…';
+      try {
+        const r = await fetch(cfg.url.replace(/\/$/, '') + '/auth/v1/user', {method: 'PUT', headers: {apikey: cfg.anon, Authorization: 'Bearer ' + token, 'Content-Type': 'application/json'}, body: JSON.stringify({password: a})});
+        if (r.ok) { v.innerHTML = '<p class="ok">パスワードを決め直しました。</p><p>Micle に戻って、新しいパスワードでログインしてください。</p>'; }
+        else { const j = await r.json().catch(() => ({})); m.className = 'msg bad'; m.textContent = /weak|password should/i.test(JSON.stringify(j)) ? 'パスワードが弱すぎます' : 'うまくいきませんでした。Micle からもう一度メールを送ってください'; }
+      } catch (e) { m.className = 'msg bad'; m.textContent = 'つながりませんでした'; }
+    };
+    return;
+  }
+  v.innerHTML = '<p>Micle に戻ってください。</p>';
+})();
+</script>
+</body></html>
