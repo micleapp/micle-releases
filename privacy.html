@@ -34,7 +34,7 @@
 <main><div class="wrap"><button class="lang" id="langBtn" type="button">English / 日本語</button></div>
 <main class="wrap doc">
 <h1 lang="ja">プライバシーポリシー</h1><h1 lang="en">Privacy Policy</h1>
-<p class="small">2026-10-25</p>
+<p class="small">2026-11-05</p>
 <div lang="ja">
 <p>Micle（以下「本アプリ」）は、できるだけお使いの PC の中だけで動くように作られています。本アプリと本サイトが扱う情報は、次の通りです。</p>
 <h2>1. PC の中だけで処理するもの（外に送りません）</h2>
@@ -51,10 +51,18 @@
 <li><b>Discord ボット（プロ版）</b>：あなたが設定した時だけ、Discord とつながります。トークンは PC の中で暗号化して保存します。</li>
 <li><b>モールス無線</b>：電源を入れた時だけ使います。「インターネット」では、あなたの局名（呼び出し名）・周波数・打った符号のタイミングを、Nostr の公開の中継（relay.damus.io など）に送ります。中継に届いた物は、Micle を持っている誰でも受け取れます（内容は暗号化されません。名前や個人の情報を局名にしないでください）。中継にはふつうの通信と同じく IP アドレスが届きます。「同じネットワーク」は家の中の Wi-Fi だけに流れます。「MorseKOB」は MorseKOB のサーバーと通信します。</li>
 </ul>
+<h2>2-2. 使い方の情報（Micle をよくするため）</h2>
+<ul>
+<li><b>起動の知らせ（はじめから ON・同意は要りません）</b>：1 日 1 回まで、本アプリのバージョン・Windows のバージョン・表示の言語・無料版／お試し／プロ版の別・協力しているかどうか、だけを送ります。だれの PC か分かる番号や名前は付けません。設定 → データ の「起動した数だけ知らせる」で止められます。</li>
+<li><b>詳しい使い方の情報（協力すると答えた人だけ）</b>：はじめに協力するかをおたずねし、「協力する」を選んだ人だけ、1 日 1 回まで次を送ります。PC の環境（Windows のバージョンと種類・CPU の型とコア数・メモリの量・グラフィックの型とドライバーのバージョン・画面の数と大きさ・音の機器の数と設定・言語と地域・時差・インストールしたかどうか）、本アプリの使い方（機能の ON/OFF と数の設定・押した操作と開いたページの回数・エラーの種類と回数・落ちた回数・CPU とメモリの使い方・表示物やショートカットの数）。数えるために、PC やあなたとは関係のない、でたらめな番号を付けます。</li>
+<li><b>どちらでも送らない物</b>：声や音、打った文字、画面の中身、ファイルやフォルダの名前、ウィンドウの名前、機器の名前、PC の名前、ユーザー名、メールアドレス、ライセンスキー、トークン、合言葉。</li>
+<li><b>送り先</b>：作者の Google アカウントの Google スプレッドシート（Google Apps Script 経由）。作者には送った人の IP アドレスは見えません。</li>
+<li><b>やめる・消す</b>：設定 → データ でいつでも協力をやめられます。「今までに送った情報を消してもらう」を押すと、その番号の詳しい情報を消します。送る中身は「送る中身を見る」でいつでも確かめられます。</li>
+</ul>
 <h2>3. 購入</h2>
 <p>お支払いは Lemon Squeezy（販売事業者として決済を代行）が行います。カード番号などは私たちには届きません。Lemon Squeezy の取り扱いは同社のプライバシーポリシーに従います。私たちは、購入の確認とサポートのために、注文番号・メールアドレス・ライセンスの情報を見られます。</p>
 <h2>4. 使いみちと第三者への提供</h2>
-<p>いただいた情報は、サポート・不具合の修正・本アプリの改善だけに使います。法令に基づく場合を除き、第三者に売ったり渡したりしません。本アプリに広告や利用状況の追跡（解析ツール）は入っていません。</p>
+<p>いただいた情報は、サポート・不具合の修正・本アプリの改善だけに使います。法令に基づく場合を除き、第三者に売ったり渡したりしません。本アプリに広告や、よその会社の解析ツールは入っていません（使い方の情報は 2-2 のとおり、作者だけが見ます）。</p>
 <h2>5. 本サイト</h2>
 <p>本サイトは GitHub Pages で公開しています。アクセス時の情報は GitHub が扱います。本サイト自体は Cookie や解析ツールを使いません（言語の選択だけをブラウザに保存します）。</p>
 <h2>6. お問い合わせ・削除のご依頼</h2>
@@ -76,10 +84,18 @@
 <li><b>Morse radio</b>: used only when you turn it on. "Internet" sends your call sign, frequency and the timing of what you key to public Nostr relays (such as relay.damus.io). Anyone running Micle can receive it; it is not encrypted, so do not use personal information as your call sign. Like any connection, the relays see your IP address. "Same network" stays on your home Wi-Fi. "MorseKOB" talks to the MorseKOB server.</li>
 <li><b>Network tools</b>: port forwarding, the forwarding list and your external IP address talk only to your home router (UPnP). "Connection check" sends pings to your router and 1.1.1.1 (Cloudflare) only when you run it.</li>
 </ul>
+<h2>2-2. Usage information (to improve Micle)</h2>
+<ul>
+<li><b>Launch ping (on by default, no consent needed)</b>: at most once a day, only the App version, Windows version, display language, free/trial/Pro status and whether you participate. No identifier or name is attached. You can turn it off in Settings → Data.</li>
+<li><b>Detailed usage information (only if you agree)</b>: we ask once whether you want to help. Only if you choose “Help”, at most once a day we send your PC environment (Windows version and edition, CPU model and cores, amount of memory, graphics model and driver version, number and size of screens, number of audio devices and audio settings, language and region, time zone, installed or not) and how you use the App (feature on/off and numeric settings, counts of actions and pages opened, error types and counts, crashes, CPU and memory use, number of overlays and shortcuts), with a random number unrelated to your PC or you.</li>
+<li><b>Never sent</b>: your voice or audio, typed text, screen contents, file or folder names, window titles, device names, PC name, user name, email address, license key, tokens or passwords.</li>
+<li><b>Destination</b>: a Google Sheet in the author's Google account (via Google Apps Script). The author cannot see your IP address.</li>
+<li><b>Stop or delete</b>: you can stop anytime in Settings → Data. “Ask to delete what I sent” deletes the detailed information for your number. “Show what is sent” shows the exact contents.</li>
+</ul>
 <h2>3. Purchases</h2>
 <p>Payments are handled by Lemon Squeezy as the merchant of record. We never receive your card details. We can see order numbers, email addresses and license information for verification and support.</p>
 <h2>4. Use and sharing</h2>
-<p>Information is used only for support, bug fixes and improving the App. We do not sell or share it with third parties except as required by law. The App contains no ads or usage analytics.</p>
+<p>Information is used only for support, bug fixes and improving the App. We do not sell or share it with third parties except as required by law. The App contains no ads or third-party analytics (usage information in 2-2 is seen only by the author).</p>
 <h2>5. This website</h2>
 <p>This site is hosted on GitHub Pages; access logs are handled by GitHub. The site itself uses no cookies or analytics (only your language choice is stored in your browser).</p>
 <h2>6. Contact &amp; deletion requests</h2>
