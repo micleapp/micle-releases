@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>如何把 Minecraft 伺服器開放給朋友｜一鍵連接埠轉送（Java 版・基岩版）</title>
+<meta name="description" content="讓朋友加入你的 Minecraft（當個創世神）伺服器所需的連接埠轉送方法。使用免費應用程式 Micle，不用打開路由器設定，就能用按鈕開放 25565（Java 版）或 19132（基岩版）連接埠。">
+<link rel="canonical" href="https://micleapp.github.io/micle-releases/zh-tw/guides/minecraft-server.html">
+<link rel="alternate" hreflang="ja" href="https://micleapp.github.io/micle-releases/guides/minecraft-server.html">
+<link rel="alternate" hreflang="en" href="https://micleapp.github.io/micle-releases/en/guides/minecraft-server.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://micleapp.github.io/micle-releases/zh-cn/guides/minecraft-server.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://micleapp.github.io/micle-releases/zh-tw/guides/minecraft-server.html">
+<link rel="alternate" hreflang="ko" href="https://micleapp.github.io/micle-releases/ko/guides/minecraft-server.html">
+<link rel="alternate" hreflang="es" href="https://micleapp.github.io/micle-releases/es/guides/minecraft-server.html">
+<link rel="alternate" hreflang="fr" href="https://micleapp.github.io/micle-releases/fr/guides/minecraft-server.html">
+<link rel="alternate" hreflang="de" href="https://micleapp.github.io/micle-releases/de/guides/minecraft-server.html">
+<link rel="alternate" hreflang="pt" href="https://micleapp.github.io/micle-releases/pt/guides/minecraft-server.html">
+<link rel="alternate" hreflang="ru" href="https://micleapp.github.io/micle-releases/ru/guides/minecraft-server.html">
+<link rel="alternate" hreflang="x-default" href="https://micleapp.github.io/micle-releases/en/guides/minecraft-server.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Micle">
+<meta property="og:title" content="如何把 Minecraft 伺服器開放給朋友｜一鍵連接埠轉送（Java 版・基岩版）">
+<meta property="og:description" content="讓朋友加入你的 Minecraft（當個創世神）伺服器所需的連接埠轉送方法。使用免費應用程式 Micle，不用打開路由器設定，就能用按鈕開放 25565（Java 版）或 19132（基岩版）連接埠。">
+<meta property="og:url" content="https://micleapp.github.io/micle-releases/zh-tw/guides/minecraft-server.html">
+<meta property="og:image" content="https://micleapp.github.io/micle-releases/img/cover.png">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="fuyohaze">
+<meta name="theme-color" content="#11151c">
+<link rel="icon" href="../../img/favicon.png">
+<link rel="stylesheet" href="../../style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "把 Minecraft 伺服器開放給朋友（連接埠轉送）", "description": "讓朋友加入你的 Minecraft（當個創世神）伺服器所需的連接埠轉送方法。使用免費應用程式 Micle，不用打開路由器設定，就能用按鈕開放 25565（Java 版）或 19132（基岩版）連接埠。", "inLanguage": "zh-Hant", "tool": [{"@type": "HowToTool", "name": "Micle"}], "step": [{"@type": "HowToStep", "position": 1, "name": "啟動伺服器並確認自己能進入", "text": "先啟動伺服器，用同一台電腦上的 Minecraft 透過 localhost 確認能進入。如果這裡進不去，請先檢查伺服器設定。"}, {"@type": "HowToStep", "position": 2, "name": "打開 Micle 的「Network」", "text": "在 Micle 左側選單中打開 Other → Network，按「Find router」。顯示「Found」就準備好了。"}, {"@type": "HowToStep", "position": 3, "name": "從常用遊戲中選擇 Minecraft", "text": "在「Add from common games…」中，Java 版選 Minecraft (Java) = 25565 連接埠・TCP，基岩版選 Minecraft (Bedrock) = 19132 連接埠・UDP。名稱和連接埠會自動填入。"}, {"@type": "HowToStep", "position": 4, "name": "按「Open」", "text": "顯示「Open」就表示連接埠已開放。如果仍然無法連線，把同一列防火牆欄的「Allow」也打開（Windows 會確認一次）。"}, {"@type": "HowToStep", "position": 5, "name": "把位址告訴朋友", "text": "在「Addresses」欄中按 External IP 旁的「Copy」，連同連接埠號碼一起傳給朋友，例如 203.0.113.5:25565。朋友在 Minecraft 的「多人遊戲」→「直接連線」中輸入即可。"}, {"@type": "HowToStep", "position": 6, "name": "玩完後關閉", "text": "不要一直開著比較安全。打開「Close when Micle closes」，關閉 Micle 時會自動關閉。"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://micleapp.github.io/micle-releases/zh-tw/"}, {"@type": "ListItem", "position": 2, "name": "使用教學", "item": "https://micleapp.github.io/micle-releases/zh-tw/guides/"}, {"@type": "ListItem", "position": 3, "name": "把 Minecraft 伺服器開放給朋友"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "連接埠轉送危險嗎？", "acceptedAnswer": {"@type": "Answer", "text": "外部只能連到在該連接埠執行的軟體（Minecraft 伺服器）。啟用白名單並在用完後關閉，可以大幅降低風險。"}}, {"@type": "Question", "name": "IP 位址每次都一樣嗎？", "acceptedAnswer": {"@type": "Answer", "text": "取決於你的網路方案，重新啟動路由器等情況下可能會變。朋友進不來時，請在 Micle 重新確認「External IP」。"}}, {"@type": "Question", "name": "基岩版（手機）的朋友也能進嗎？", "acceptedAnswer": {"@type": "Answer", "text": "開放基岩版伺服器（19132 連接埠・UDP）後，手機和電腦上的基岩版玩家都能加入。Switch 等遊戲主機連線外部伺服器有限制。"}}]}</script>
+</head>
+<body data-lang="zh-tw">
+<header><div class="wrap">
+  <a class="brand" href="../"><img src="../../img/logo.png" alt="" width="30" height="30">Micle</a>
+  <nav>
+    <a class="hide-s" href="../#features">功能</a>
+    <a class="hide-s" href="./">使用教學</a>
+    <a class="hide-s" href="../#pricing">價格</a>
+    <a class="hide-m" href="../#faq">FAQ</a>
+    <details class="langs"><summary><svg class="gl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span>繁體中文</span></summary><div><a href="../../guides/minecraft-server.html" hreflang="ja" lang="ja">日本語</a><a href="../../en/guides/minecraft-server.html" hreflang="en" lang="en">English</a><a href="../../zh-cn/guides/minecraft-server.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="minecraft-server.html" hreflang="zh-Hant" lang="zh-Hant" class=on>繁體中文</a><a href="../../ko/guides/minecraft-server.html" hreflang="ko" lang="ko">한국어</a><a href="../../es/guides/minecraft-server.html" hreflang="es" lang="es">Español</a><a href="../../fr/guides/minecraft-server.html" hreflang="fr" lang="fr">Français</a><a href="../../de/guides/minecraft-server.html" hreflang="de" lang="de">Deutsch</a><a href="../../pt/guides/minecraft-server.html" hreflang="pt" lang="pt">Português</a><a href="../../ru/guides/minecraft-server.html" hreflang="ru" lang="ru">Русский</a></div></details>
+  </nav>
+  <a class="cheer" href="../support.html">支持作者</a>
+</div></header>
+
+<main class="wrap guide">
+<nav class="crumbs" aria-label="breadcrumb"><a href="../">首頁</a> <span>/</span> <a href="./">使用教學</a> <span>/</span> <span>把 Minecraft 伺服器開放給朋友</span></nav>
+<article>
+  <p class="kicker"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8"/></svg>Micle 使用教學</p>
+  <h1>把 Minecraft 伺服器開放給朋友（連接埠轉送）</h1>
+  <div class="intro"><p>想讓家外面的朋友加入你電腦上的 Minecraft 伺服器，需要「連接埠轉送（Port Forwarding）」。一般要進入路由器設定頁操作，而用 Micle 只要一個按鈕就能開放或關閉連接埠。</p><p class="tip">如果大家都在同一個家裡（同一個 Wi-Fi），就不需要連接埠轉送，用伺服器電腦的區域網路位址即可加入。</p></div>
+  <div class="need"><h2>需要準備</h2><ul><li>Minecraft 伺服器（Java 版用官方 server.jar，基岩版用 Bedrock Dedicated Server 等）</li><li>Micle（免費）</li><li>已開啟 UPnP 的路由器（多數家用路由器預設開啟）</li></ul></div>
+  <h2>操作步驟</h2>
+  <ol class="steps"><li><h3>啟動伺服器並確認自己能進入</h3><p>先啟動伺服器，用同一台電腦上的 Minecraft 透過 <code>localhost</code> 確認能進入。如果這裡進不去，請先檢查伺服器設定。</p></li><li><h3>打開 Micle 的「Network」</h3><p>在 Micle 左側選單中打開 Other → Network，按「Find router」。顯示「Found」就準備好了。</p></li><li><h3>從常用遊戲中選擇 Minecraft</h3><p>在「Add from common games…」中，Java 版選 <b>Minecraft (Java) = 25565 連接埠・TCP</b>，基岩版選 <b>Minecraft (Bedrock) = 19132 連接埠・UDP</b>。名稱和連接埠會自動填入。</p></li><li><h3>按「Open」</h3><p>顯示「Open」就表示連接埠已開放。如果仍然無法連線，把同一列防火牆欄的「Allow」也打開（Windows 會確認一次）。</p></li><li><h3>把位址告訴朋友</h3><p>在「Addresses」欄中按 <b>External IP</b> 旁的「Copy」，連同連接埠號碼一起傳給朋友，例如 <code>203.0.113.5:25565</code>。朋友在 Minecraft 的「多人遊戲」→「直接連線」中輸入即可。</p></li><li><h3>玩完後關閉</h3><p>不要一直開著比較安全。打開「Close when Micle closes」，關閉 Micle 時會自動關閉。</p></li></ol>
+  <h2>遇到問題時</h2><ul><li><b>找不到路由器</b>：路由器的 UPnP 可能被關閉了。請參照路由器說明書開啟「UPnP」。</li><li><b>已開放但朋友進不來</b>：部分網路方案不允許外部連線（CGNAT、僅 IPv6 等）。可以考慮電信業者的固定 IP 服務，或 Minecraft Realms 等方式。</li><li><b>出現「連接埠已被使用」，伺服器無法啟動</b>：用 Micle 的「Apps using a port」查看是哪個應用程式在使用。</li></ul><div class="warn">連接埠轉送會讓外部的人能連到你的電腦。請為伺服器啟用白名單、保持最新版本，用完後關閉連接埠。</div>
+  <h2>常見問題</h2><details><summary>連接埠轉送危險嗎？</summary><p>外部只能連到在該連接埠執行的軟體（Minecraft 伺服器）。啟用白名單並在用完後關閉，可以大幅降低風險。</p></details><details><summary>IP 位址每次都一樣嗎？</summary><p>取決於你的網路方案，重新啟動路由器等情況下可能會變。朋友進不來時，請在 Micle 重新確認「External IP」。</p></details><details><summary>基岩版（手機）的朋友也能進嗎？</summary><p>開放基岩版伺服器（19132 連接埠・UDP）後，手機和電腦上的基岩版玩家都能加入。Switch 等遊戲主機連線外部伺服器有限制。</p></details>
+  <div class="tryit">
+    <img src="../../img/logo.png" alt="" width="48" height="48">
+    <div><h2>Micle 可以免費使用</h2><p>除了連接埠轉送，Micle 也能檢查防火牆規則、使用連接埠的應用程式和網路速度。</p><div class="dl">
+  <a class="btn pri" data-dl><svg class="bi" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>免費下載</span></a>
+  <p class="small">Windows 10 / 11（64 位元）· 最新版 v<span data-ver></span> · <span data-size></span> MB · 無廣告</p>
+</div></div>
+  </div>
+</article>
+<aside class="others"><h2>其他教學</h2><a href="discord-voice-changer.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>在 Discord 中使用變聲器</a><a href="noise-removal.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2M7 8v8M11 5v14M15 8v8M19 11v2"/></svg>去除通話中的噪音</a><a href="morse-code.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><path d="M10 12h9"/></svg>開始使用摩斯電碼</a><a href="stream-overlay.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><circle cx="15.5" cy="10.5" r="2.5"/><path d="M8 21h8"/></svg>在直播中顯示立繪・字幕・歌名</a><a href="game-tips.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>遊戲中好用的小技巧</a></aside>
+</main>
+<footer><div class="wrap">
+  <span>© 2026 Micle · 作者：fuyohaze（ふよはぜ）</span>
+  <a href="./">使用教學</a>
+  <a href="../about.html">關於作者</a>
+  <a href="../../terms.html?lang=en">使用條款</a>
+  <a href="../../privacy.html?lang=en">隱私權政策</a>
+  <a href="../../legal.html?lang=en">日本特定商業交易法標示</a>
+  <a href="https://github.com/micleapp/micle-releases/releases" target="_blank" rel="noopener">歷史版本</a>
+  <span class="sp"></span>
+  <a class="cheer2" href="../support.html">支持作者</a>
+  <a data-mail></a>
+</div></footer>
+<script src="../../site.js"></script>
+</body>
+</html>

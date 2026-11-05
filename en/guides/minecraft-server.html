@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to host a Minecraft server for friends — port forwarding with one button (Java &amp; Bedrock)</title>
+<meta name="description" content="How to port forward so friends can join your Minecraft server. With the free app Micle you can open port 25565 (Java) or 19132 (Bedrock) with a button, without opening your router settings.">
+<link rel="canonical" href="https://micleapp.github.io/micle-releases/en/guides/minecraft-server.html">
+<link rel="alternate" hreflang="ja" href="https://micleapp.github.io/micle-releases/guides/minecraft-server.html">
+<link rel="alternate" hreflang="en" href="https://micleapp.github.io/micle-releases/en/guides/minecraft-server.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://micleapp.github.io/micle-releases/zh-cn/guides/minecraft-server.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://micleapp.github.io/micle-releases/zh-tw/guides/minecraft-server.html">
+<link rel="alternate" hreflang="ko" href="https://micleapp.github.io/micle-releases/ko/guides/minecraft-server.html">
+<link rel="alternate" hreflang="es" href="https://micleapp.github.io/micle-releases/es/guides/minecraft-server.html">
+<link rel="alternate" hreflang="fr" href="https://micleapp.github.io/micle-releases/fr/guides/minecraft-server.html">
+<link rel="alternate" hreflang="de" href="https://micleapp.github.io/micle-releases/de/guides/minecraft-server.html">
+<link rel="alternate" hreflang="pt" href="https://micleapp.github.io/micle-releases/pt/guides/minecraft-server.html">
+<link rel="alternate" hreflang="ru" href="https://micleapp.github.io/micle-releases/ru/guides/minecraft-server.html">
+<link rel="alternate" hreflang="x-default" href="https://micleapp.github.io/micle-releases/en/guides/minecraft-server.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Micle">
+<meta property="og:title" content="How to host a Minecraft server for friends — port forwarding with one button (Java &amp; Bedrock)">
+<meta property="og:description" content="How to port forward so friends can join your Minecraft server. With the free app Micle you can open port 25565 (Java) or 19132 (Bedrock) with a button, without opening your router settings.">
+<meta property="og:url" content="https://micleapp.github.io/micle-releases/en/guides/minecraft-server.html">
+<meta property="og:image" content="https://micleapp.github.io/micle-releases/img/cover.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="fuyohaze">
+<meta name="theme-color" content="#11151c">
+<link rel="icon" href="../../img/favicon.png">
+<link rel="stylesheet" href="../../style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Host a Minecraft server for your friends (port forwarding)", "description": "How to port forward so friends can join your Minecraft server. With the free app Micle you can open port 25565 (Java) or 19132 (Bedrock) with a button, without opening your router settings.", "inLanguage": "en", "tool": [{"@type": "HowToTool", "name": "Micle"}], "step": [{"@type": "HowToStep", "position": 1, "name": "Start the server and check you can join", "text": "Start the server and make sure you can join from Minecraft on the same PC using localhost. If that fails, fix the server first."}, {"@type": "HowToStep", "position": 2, "name": "Open \"Network\" in Micle", "text": "Open Other → Network in Micle's left menu and press \"Find router\". When it says \"Found\", you are ready."}, {"@type": "HowToStep", "position": 3, "name": "Pick Minecraft from common games", "text": "From \"Add from common games…\", choose Minecraft (Java) = port 25565 TCP or Minecraft (Bedrock) = port 19132 UDP. The name and port are filled in for you."}, {"@type": "HowToStep", "position": 4, "name": "Press \"Open\"", "text": "When it shows \"Open\", the port is forwarded. If friends still can't join, also turn on \"Allow\" in the Firewall column (Windows asks once)."}, {"@type": "HowToStep", "position": 5, "name": "Send your address to friends", "text": "Press \"Copy\" next to External IP in the Addresses card, and send it with the port number, e.g. 203.0.113.5:25565. Friends enter it in Multiplayer → Direct Connection."}, {"@type": "HowToStep", "position": 6, "name": "Close it when you are done", "text": "Don't leave ports open. Turn on \"Close when Micle closes\" and they close automatically."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://micleapp.github.io/micle-releases/en/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://micleapp.github.io/micle-releases/en/guides/"}, {"@type": "ListItem", "position": 3, "name": "Host a Minecraft server for friends"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is port forwarding dangerous?", "acceptedAnswer": {"@type": "Answer", "text": "Only the software running on that port (your Minecraft server) is reachable. Using a whitelist and closing the port afterwards greatly reduces the risk."}}, {"@type": "Question", "name": "Does my IP address change?", "acceptedAnswer": {"@type": "Answer", "text": "Depending on your plan, it can change, for example when the router restarts. If friends can't join, check \"External IP\" in Micle again."}}, {"@type": "Question", "name": "Can Bedrock players (phones) join?", "acceptedAnswer": {"@type": "Answer", "text": "If you open a Bedrock server (port 19132 UDP), Bedrock players on phones and PCs can join. Consoles like Switch have restrictions on external servers."}}]}</script>
+</head>
+<body data-lang="en">
+<header><div class="wrap">
+  <a class="brand" href="../"><img src="../../img/logo.png" alt="" width="30" height="30">Micle</a>
+  <nav>
+    <a class="hide-s" href="../#features">Features</a>
+    <a class="hide-s" href="./">Guides</a>
+    <a class="hide-s" href="../#pricing">Pricing</a>
+    <a class="hide-m" href="../#faq">FAQ</a>
+    <details class="langs"><summary><svg class="gl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span>English</span></summary><div><a href="../../guides/minecraft-server.html" hreflang="ja" lang="ja">日本語</a><a href="minecraft-server.html" hreflang="en" lang="en" class=on>English</a><a href="../../zh-cn/guides/minecraft-server.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="../../zh-tw/guides/minecraft-server.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="../../ko/guides/minecraft-server.html" hreflang="ko" lang="ko">한국어</a><a href="../../es/guides/minecraft-server.html" hreflang="es" lang="es">Español</a><a href="../../fr/guides/minecraft-server.html" hreflang="fr" lang="fr">Français</a><a href="../../de/guides/minecraft-server.html" hreflang="de" lang="de">Deutsch</a><a href="../../pt/guides/minecraft-server.html" hreflang="pt" lang="pt">Português</a><a href="../../ru/guides/minecraft-server.html" hreflang="ru" lang="ru">Русский</a></div></details>
+  </nav>
+  <a class="cheer" href="../support.html">Support the creator</a>
+</div></header>
+
+<main class="wrap guide">
+<nav class="crumbs" aria-label="breadcrumb"><a href="../">Home</a> <span>/</span> <a href="./">Guides</a> <span>/</span> <span>Host a Minecraft server for friends</span></nav>
+<article>
+  <p class="kicker"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8"/></svg>Micle guide</p>
+  <h1>Host a Minecraft server for your friends (port forwarding)</h1>
+  <div class="intro"><p>For friends outside your home to join a Minecraft server running on your PC, you need "port forwarding". Normally you do it in your router's settings page, but with Micle you can open and close ports with a single button.</p><p class="tip">If everyone is in the same home (same Wi-Fi), you don't need port forwarding. Just use the server PC's local address.</p></div>
+  <div class="need"><h2>What you need</h2><ul><li>A Minecraft server (the official server.jar for Java, or Bedrock Dedicated Server)</li><li>Micle (free)</li><li>A router with UPnP turned on (most home routers have it on by default)</li></ul></div>
+  <h2>How to do it</h2>
+  <ol class="steps"><li><h3>Start the server and check you can join</h3><p>Start the server and make sure you can join from Minecraft on the same PC using <code>localhost</code>. If that fails, fix the server first.</p></li><li><h3>Open "Network" in Micle</h3><p>Open Other → Network in Micle's left menu and press "Find router". When it says "Found", you are ready.</p></li><li><h3>Pick Minecraft from common games</h3><p>From "Add from common games…", choose <b>Minecraft (Java) = port 25565 TCP</b> or <b>Minecraft (Bedrock) = port 19132 UDP</b>. The name and port are filled in for you.</p></li><li><h3>Press "Open"</h3><p>When it shows "Open", the port is forwarded. If friends still can't join, also turn on "Allow" in the Firewall column (Windows asks once).</p></li><li><h3>Send your address to friends</h3><p>Press "Copy" next to <b>External IP</b> in the Addresses card, and send it with the port number, e.g. <code>203.0.113.5:25565</code>. Friends enter it in Multiplayer → Direct Connection.</p></li><li><h3>Close it when you are done</h3><p>Don't leave ports open. Turn on "Close when Micle closes" and they close automatically.</p></li></ol>
+  <h2>Troubleshooting</h2><ul><li><b>Router not found</b>: UPnP may be off in your router. Turn on "UPnP" following your router's manual.</li><li><b>Open but friends can't join</b>: Some internet plans don't allow incoming connections (CGNAT, IPv6-only, etc.). Consider a static IP option from your provider or a service like Minecraft Realms.</li><li><b>"Port already in use" and the server won't start</b>: Use "Apps using a port" in Micle to see which app is using it.</li></ul><div class="warn">Port forwarding lets outside people reach your PC. Use a whitelist on your server, keep it updated, and close the port when you are done.</div>
+  <h2>FAQ</h2><details><summary>Is port forwarding dangerous?</summary><p>Only the software running on that port (your Minecraft server) is reachable. Using a whitelist and closing the port afterwards greatly reduces the risk.</p></details><details><summary>Does my IP address change?</summary><p>Depending on your plan, it can change, for example when the router restarts. If friends can't join, check "External IP" in Micle again.</p></details><details><summary>Can Bedrock players (phones) join?</summary><p>If you open a Bedrock server (port 19132 UDP), Bedrock players on phones and PCs can join. Consoles like Switch have restrictions on external servers.</p></details>
+  <div class="tryit">
+    <img src="../../img/logo.png" alt="" width="48" height="48">
+    <div><h2>Micle is free to use</h2><p>Besides port forwarding, Micle also checks firewall rules, apps using a port, and your connection speed.</p><div class="dl">
+  <a class="btn pri" data-dl><svg class="bi" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download for free</span></a>
+  <p class="small">Windows 10 / 11 (64-bit) · Latest v<span data-ver></span> · <span data-size></span> MB · No ads</p>
+</div></div>
+  </div>
+</article>
+<aside class="others"><h2>More guides</h2><a href="discord-voice-changer.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Use a voice changer on Discord</a><a href="noise-removal.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2M7 8v8M11 5v14M15 8v8M19 11v2"/></svg>Remove noise from calls</a><a href="morse-code.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><path d="M10 12h9"/></svg>Get started with Morse code</a><a href="stream-overlay.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><circle cx="15.5" cy="10.5" r="2.5"/><path d="M8 21h8"/></svg>Show an avatar, captions and now playing on stream</a><a href="game-tips.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Handy tricks while gaming</a></aside>
+</main>
+<footer><div class="wrap">
+  <span>© 2026 Micle · Made by fuyohaze</span>
+  <a href="./">Guides</a>
+  <a href="../about.html">About the creator</a>
+  <a href="../../terms.html?lang=en">Terms</a>
+  <a href="../../privacy.html?lang=en">Privacy</a>
+  <a href="../../legal.html?lang=en">Legal notice (Japan)</a>
+  <a href="https://github.com/micleapp/micle-releases/releases" target="_blank" rel="noopener">Releases</a>
+  <span class="sp"></span>
+  <a class="cheer2" href="../support.html">Support the creator</a>
+  <a data-mail></a>
+</div></footer>
+<script src="../../site.js"></script>
+</body>
+</html>

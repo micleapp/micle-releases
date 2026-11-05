@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>방송에 캐릭터·자막·재생 중인 곡 띄우는 방법 | OBS·Discord 화면 공유 (무료)</title>
+<meta name="description" content="게임 방송이나 Discord 화면 공유에서 말하면 입이 움직이는 PNG 캐릭터, 실시간 자막, 재생 중인 곡 이름, 타이머를 화면에 겹치는 방법. 무료 앱 Micle의 오버레이를 사용합니다.">
+<link rel="canonical" href="https://micleapp.github.io/micle-releases/ko/guides/stream-overlay.html">
+<link rel="alternate" hreflang="ja" href="https://micleapp.github.io/micle-releases/guides/stream-overlay.html">
+<link rel="alternate" hreflang="en" href="https://micleapp.github.io/micle-releases/en/guides/stream-overlay.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://micleapp.github.io/micle-releases/zh-cn/guides/stream-overlay.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://micleapp.github.io/micle-releases/zh-tw/guides/stream-overlay.html">
+<link rel="alternate" hreflang="ko" href="https://micleapp.github.io/micle-releases/ko/guides/stream-overlay.html">
+<link rel="alternate" hreflang="es" href="https://micleapp.github.io/micle-releases/es/guides/stream-overlay.html">
+<link rel="alternate" hreflang="fr" href="https://micleapp.github.io/micle-releases/fr/guides/stream-overlay.html">
+<link rel="alternate" hreflang="de" href="https://micleapp.github.io/micle-releases/de/guides/stream-overlay.html">
+<link rel="alternate" hreflang="pt" href="https://micleapp.github.io/micle-releases/pt/guides/stream-overlay.html">
+<link rel="alternate" hreflang="ru" href="https://micleapp.github.io/micle-releases/ru/guides/stream-overlay.html">
+<link rel="alternate" hreflang="x-default" href="https://micleapp.github.io/micle-releases/en/guides/stream-overlay.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Micle">
+<meta property="og:title" content="방송에 캐릭터·자막·재생 중인 곡 띄우는 방법 | OBS·Discord 화면 공유 (무료)">
+<meta property="og:description" content="게임 방송이나 Discord 화면 공유에서 말하면 입이 움직이는 PNG 캐릭터, 실시간 자막, 재생 중인 곡 이름, 타이머를 화면에 겹치는 방법. 무료 앱 Micle의 오버레이를 사용합니다.">
+<meta property="og:url" content="https://micleapp.github.io/micle-releases/ko/guides/stream-overlay.html">
+<meta property="og:image" content="https://micleapp.github.io/micle-releases/img/cover.png">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="fuyohaze">
+<meta name="theme-color" content="#11151c">
+<link rel="icon" href="../../img/favicon.png">
+<link rel="stylesheet" href="../../style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "방송에 캐릭터·자막·재생 중인 곡 띄우기", "description": "게임 방송이나 Discord 화면 공유에서 말하면 입이 움직이는 PNG 캐릭터, 실시간 자막, 재생 중인 곡 이름, 타이머를 화면에 겹치는 방법. 무료 앱 Micle의 오버레이를 사용합니다.", "inLanguage": "ko", "tool": [{"@type": "HowToTool", "name": "Micle"}], "step": [{"@type": "HowToStep", "position": 1, "name": "오버레이 추가", "text": "Overlays 페이지의 \"Add\"에서 캐릭터, 이미지, 시계, 타이머, 스톱워치, 텍스트, 재생 중인 곡, 자막 등을 골라 추가합니다."}, {"@type": "HowToStep", "position": 2, "name": "캐릭터가 말하게 하기", "text": "캐릭터에 이미지를 넣으면 말하는 동안 흔들리거나 입을 벌린 이미지로 바뀌게 할 수 있습니다. 말하지 않을 때 조금 어둡게 하는 것도 가능합니다."}, {"@type": "HowToStep", "position": 3, "name": "자막 띄우기", "text": "\"Captions\"를 추가하면 말한 내용을 문자로 바꿔 화면에 띄웁니다. 텍스트 변환은 PC 안에서만 합니다."}, {"@type": "HowToStep", "position": 4, "name": "재생 중인 곡 띄우기", "text": "\"Now playing\"을 추가하면 Spotify 등에서 재생 중인 곡 이름과 앨범 아트를 표시합니다."}, {"@type": "HowToStep", "position": 5, "name": "위치 맞추기", "text": "\"Move\"를 눌러 오버레이를 원하는 곳으로 드래그합니다."}, {"@type": "HowToStep", "position": 6, "name": "방송에 내보내기", "text": "OBS에서는 \"디스플레이 캡처\"로 나옵니다. 창만 캡처하고 싶다면 Micle의 \"Stream view\" 창(프로)을 캡처하거나 가상 카메라를 씁니다."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://micleapp.github.io/micle-releases/ko/"}, {"@type": "ListItem", "position": 2, "name": "사용 가이드", "item": "https://micleapp.github.io/micle-releases/ko/guides/"}, {"@type": "ListItem", "position": 3, "name": "방송에 캐릭터·자막·곡 이름 띄우기"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "캐릭터 이미지가 없어요", "acceptedAnswer": {"@type": "Answer", "text": "프로 버전의 AI로 글에서 그림을 만들고 입 모양·눈 깜빡임 이미지까지 만들 수 있습니다. 배경 지우기는 무료입니다."}}, {"@type": "Question", "name": "게임 위에 안 나와요", "acceptedAnswer": {"@type": "Answer", "text": "게임을 \"전체 화면\"에서 \"테두리 없는 창 모드\"로 바꾸면 위에 겹쳐 표시할 수 있습니다."}}]}</script>
+</head>
+<body data-lang="ko">
+<header><div class="wrap">
+  <a class="brand" href="../"><img src="../../img/logo.png" alt="" width="30" height="30">Micle</a>
+  <nav>
+    <a class="hide-s" href="../#features">기능</a>
+    <a class="hide-s" href="./">사용 가이드</a>
+    <a class="hide-s" href="../#pricing">가격</a>
+    <a class="hide-m" href="../#faq">FAQ</a>
+    <details class="langs"><summary><svg class="gl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span>한국어</span></summary><div><a href="../../guides/stream-overlay.html" hreflang="ja" lang="ja">日本語</a><a href="../../en/guides/stream-overlay.html" hreflang="en" lang="en">English</a><a href="../../zh-cn/guides/stream-overlay.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="../../zh-tw/guides/stream-overlay.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="stream-overlay.html" hreflang="ko" lang="ko" class=on>한국어</a><a href="../../es/guides/stream-overlay.html" hreflang="es" lang="es">Español</a><a href="../../fr/guides/stream-overlay.html" hreflang="fr" lang="fr">Français</a><a href="../../de/guides/stream-overlay.html" hreflang="de" lang="de">Deutsch</a><a href="../../pt/guides/stream-overlay.html" hreflang="pt" lang="pt">Português</a><a href="../../ru/guides/stream-overlay.html" hreflang="ru" lang="ru">Русский</a></div></details>
+  </nav>
+  <a class="cheer" href="../support.html">크리에이터 응원하기</a>
+</div></header>
+
+<main class="wrap guide">
+<nav class="crumbs" aria-label="breadcrumb"><a href="../">홈</a> <span>/</span> <a href="./">사용 가이드</a> <span>/</span> <span>방송에 캐릭터·자막·곡 이름 띄우기</span></nav>
+<article>
+  <p class="kicker"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><circle cx="15.5" cy="10.5" r="2.5"/><path d="M8 21h8"/></svg>Micle 사용 가이드</p>
+  <h1>방송에 캐릭터·자막·재생 중인 곡 띄우기</h1>
+  <div class="intro"><p>Micle의 "오버레이"는 게임 위에 겹쳐 띄울 수 있는 작은 부품입니다. 화면에 직접 표시하므로 OBS의 "디스플레이 캡처"나 Discord 화면 공유에 그대로 나옵니다.</p></div>
+  <div class="need"><h2>준비물</h2><ul><li>Micle(무료)</li><li>캐릭터로 쓸 이미지(PNG 등. AI로 만들 수도 있습니다)</li></ul></div>
+  <h2>방법</h2>
+  <ol class="steps"><li><h3>오버레이 추가</h3><p>Overlays 페이지의 "Add"에서 <b>캐릭터, 이미지, 시계, 타이머, 스톱워치, 텍스트, 재생 중인 곡, 자막</b> 등을 골라 추가합니다.</p></li><li><h3>캐릭터가 말하게 하기</h3><p>캐릭터에 이미지를 넣으면 말하는 동안 흔들리거나 입을 벌린 이미지로 바뀌게 할 수 있습니다. 말하지 않을 때 조금 어둡게 하는 것도 가능합니다.</p></li><li><h3>자막 띄우기</h3><p>"Captions"를 추가하면 말한 내용을 문자로 바꿔 화면에 띄웁니다. 텍스트 변환은 PC 안에서만 합니다.</p></li><li><h3>재생 중인 곡 띄우기</h3><p>"Now playing"을 추가하면 Spotify 등에서 재생 중인 곡 이름과 앨범 아트를 표시합니다.</p></li><li><h3>위치 맞추기</h3><p>"Move"를 눌러 오버레이를 원하는 곳으로 드래그합니다.</p></li><li><h3>방송에 내보내기</h3><p>OBS에서는 "디스플레이 캡처"로 나옵니다. 창만 캡처하고 싶다면 Micle의 "Stream view" 창(프로)을 캡처하거나 가상 카메라를 씁니다.</p></li></ol>
+  <div class="tip">나만 보고 싶은 오버레이는 "Hide from streams and screen sharing"을 켜면 방송에는 나오지 않고 내 화면에만 나옵니다.</div>
+  <h2>자주 묻는 질문</h2><details><summary>캐릭터 이미지가 없어요</summary><p>프로 버전의 AI로 글에서 그림을 만들고 입 모양·눈 깜빡임 이미지까지 만들 수 있습니다. 배경 지우기는 무료입니다.</p></details><details><summary>게임 위에 안 나와요</summary><p>게임을 "전체 화면"에서 "테두리 없는 창 모드"로 바꾸면 위에 겹쳐 표시할 수 있습니다.</p></details>
+  <div class="tryit">
+    <img src="../../img/logo.png" alt="" width="48" height="48">
+    <div><h2>Micle은 무료로 사용할 수 있습니다</h2><p>음성 통화, 게임, 방송을 돕는 기능을 하나로 모은 Windows 앱입니다. 기본 기능은 계속 무료이며 광고도 없습니다.</p><div class="dl">
+  <a class="btn pri" data-dl><svg class="bi" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>무료 다운로드</span></a>
+  <p class="small">Windows 10 / 11 (64비트) · 최신 버전 v<span data-ver></span> · <span data-size></span> MB · 광고 없음</p>
+</div></div>
+  </div>
+</article>
+<aside class="others"><h2>다른 가이드</h2><a href="minecraft-server.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8"/></svg>마인크래프트 서버를 친구에게 공개하기</a><a href="discord-voice-changer.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Discord에서 보이스 체인저 쓰기</a><a href="noise-removal.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2M7 8v8M11 5v14M15 8v8M19 11v2"/></svg>통화 노이즈 없애기</a><a href="morse-code.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><path d="M10 12h9"/></svg>모스 부호 시작하기</a><a href="game-tips.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>게임 중 편리한 팁</a></aside>
+</main>
+<footer><div class="wrap">
+  <span>© 2026 Micle · 만든 사람: fuyohaze (ふよはぜ)</span>
+  <a href="./">사용 가이드</a>
+  <a href="../about.html">만든 사람</a>
+  <a href="../../terms.html?lang=en">이용약관</a>
+  <a href="../../privacy.html?lang=en">개인정보 처리방침</a>
+  <a href="../../legal.html?lang=en">일본 특정상거래법에 따른 표기</a>
+  <a href="https://github.com/micleapp/micle-releases/releases" target="_blank" rel="noopener">이전 버전</a>
+  <span class="sp"></span>
+  <a class="cheer2" href="../support.html">크리에이터 응원하기</a>
+  <a data-mail></a>
+</div></footer>
+<script src="../../site.js"></script>
+</body>
+</html>

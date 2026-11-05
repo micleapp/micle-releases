@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ouvrir son serveur Minecraft à ses amis — ouverture de ports en un bouton (Java et Bedrock)</title>
+<meta name="description" content="Comment ouvrir les ports (redirection de ports) pour que vos amis rejoignent votre serveur Minecraft. Avec l&#x27;appli gratuite Micle, ouvrez le port 25565 (Java) ou 19132 (Bedrock) avec un bouton, sans ouvrir la configuration de votre box.">
+<link rel="canonical" href="https://micleapp.github.io/micle-releases/fr/guides/minecraft-server.html">
+<link rel="alternate" hreflang="ja" href="https://micleapp.github.io/micle-releases/guides/minecraft-server.html">
+<link rel="alternate" hreflang="en" href="https://micleapp.github.io/micle-releases/en/guides/minecraft-server.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://micleapp.github.io/micle-releases/zh-cn/guides/minecraft-server.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://micleapp.github.io/micle-releases/zh-tw/guides/minecraft-server.html">
+<link rel="alternate" hreflang="ko" href="https://micleapp.github.io/micle-releases/ko/guides/minecraft-server.html">
+<link rel="alternate" hreflang="es" href="https://micleapp.github.io/micle-releases/es/guides/minecraft-server.html">
+<link rel="alternate" hreflang="fr" href="https://micleapp.github.io/micle-releases/fr/guides/minecraft-server.html">
+<link rel="alternate" hreflang="de" href="https://micleapp.github.io/micle-releases/de/guides/minecraft-server.html">
+<link rel="alternate" hreflang="pt" href="https://micleapp.github.io/micle-releases/pt/guides/minecraft-server.html">
+<link rel="alternate" hreflang="ru" href="https://micleapp.github.io/micle-releases/ru/guides/minecraft-server.html">
+<link rel="alternate" hreflang="x-default" href="https://micleapp.github.io/micle-releases/en/guides/minecraft-server.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Micle">
+<meta property="og:title" content="Ouvrir son serveur Minecraft à ses amis — ouverture de ports en un bouton (Java et Bedrock)">
+<meta property="og:description" content="Comment ouvrir les ports (redirection de ports) pour que vos amis rejoignent votre serveur Minecraft. Avec l&#x27;appli gratuite Micle, ouvrez le port 25565 (Java) ou 19132 (Bedrock) avec un bouton, sans ouvrir la configuration de votre box.">
+<meta property="og:url" content="https://micleapp.github.io/micle-releases/fr/guides/minecraft-server.html">
+<meta property="og:image" content="https://micleapp.github.io/micle-releases/img/cover.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="fuyohaze">
+<meta name="theme-color" content="#11151c">
+<link rel="icon" href="../../img/favicon.png">
+<link rel="stylesheet" href="../../style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Ouvrez votre serveur Minecraft à vos amis (ouverture de ports)", "description": "Comment ouvrir les ports (redirection de ports) pour que vos amis rejoignent votre serveur Minecraft. Avec l'appli gratuite Micle, ouvrez le port 25565 (Java) ou 19132 (Bedrock) avec un bouton, sans ouvrir la configuration de votre box.", "inLanguage": "fr", "tool": [{"@type": "HowToTool", "name": "Micle"}], "step": [{"@type": "HowToStep", "position": 1, "name": "Lancez le serveur et vérifiez que vous pouvez vous connecter", "text": "Lancez le serveur et vérifiez que vous pouvez le rejoindre depuis Minecraft sur le même PC avec localhost. Sinon, corrigez d'abord le serveur."}, {"@type": "HowToStep", "position": 2, "name": "Ouvrez « Network » dans Micle", "text": "Ouvrez Other → Network dans le menu de gauche de Micle et appuyez sur « Find router ». Quand « Found » s'affiche, tout est prêt."}, {"@type": "HowToStep", "position": 3, "name": "Choisissez Minecraft dans les jeux courants", "text": "Dans « Add from common games… », choisissez Minecraft (Java) = port 25565 TCP ou Minecraft (Bedrock) = port 19132 UDP. Le nom et le port se remplissent tout seuls."}, {"@type": "HowToStep", "position": 4, "name": "Appuyez sur « Open »", "text": "Quand « Open » s'affiche, le port est ouvert. Si vos amis ne peuvent toujours pas entrer, activez aussi « Allow » dans la colonne Firewall (Windows demande une fois)."}, {"@type": "HowToStep", "position": 5, "name": "Envoyez votre adresse à vos amis", "text": "Appuyez sur « Copy » à côté de External IP dans la carte Addresses et envoyez-la avec le numéro de port, par ex. 203.0.113.5:25565. Vos amis la saisissent dans Multijoueur → Connexion directe."}, {"@type": "HowToStep", "position": 6, "name": "Fermez à la fin", "text": "Ne laissez pas les ports ouverts. Activez « Close when Micle closes » pour qu'ils se ferment automatiquement à la fermeture de Micle."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://micleapp.github.io/micle-releases/fr/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://micleapp.github.io/micle-releases/fr/guides/"}, {"@type": "ListItem", "position": 3, "name": "Ouvrir son serveur Minecraft à ses amis"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ouvrir des ports, est-ce dangereux ?", "acceptedAnswer": {"@type": "Answer", "text": "Seul le logiciel qui utilise ce port (votre serveur Minecraft) est accessible. Avec une liste blanche et en fermant le port ensuite, le risque baisse fortement."}}, {"@type": "Question", "name": "Mon adresse IP change-t-elle ?", "acceptedAnswer": {"@type": "Answer", "text": "Selon votre abonnement, elle peut changer, par exemple au redémarrage de la box. Si vos amis ne peuvent plus entrer, revérifiez « External IP » dans Micle."}}, {"@type": "Question", "name": "Les amis sur Bedrock (mobile) peuvent-ils entrer ?", "acceptedAnswer": {"@type": "Answer", "text": "Si vous ouvrez un serveur Bedrock (port 19132 UDP), les joueurs Bedrock sur mobile et PC peuvent entrer. Les consoles comme la Switch ont des restrictions sur les serveurs externes."}}]}</script>
+</head>
+<body data-lang="fr">
+<header><div class="wrap">
+  <a class="brand" href="../"><img src="../../img/logo.png" alt="" width="30" height="30">Micle</a>
+  <nav>
+    <a class="hide-s" href="../#features">Fonctions</a>
+    <a class="hide-s" href="./">Guides</a>
+    <a class="hide-s" href="../#pricing">Tarif</a>
+    <a class="hide-m" href="../#faq">FAQ</a>
+    <details class="langs"><summary><svg class="gl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span>Français</span></summary><div><a href="../../guides/minecraft-server.html" hreflang="ja" lang="ja">日本語</a><a href="../../en/guides/minecraft-server.html" hreflang="en" lang="en">English</a><a href="../../zh-cn/guides/minecraft-server.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="../../zh-tw/guides/minecraft-server.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="../../ko/guides/minecraft-server.html" hreflang="ko" lang="ko">한국어</a><a href="../../es/guides/minecraft-server.html" hreflang="es" lang="es">Español</a><a href="minecraft-server.html" hreflang="fr" lang="fr" class=on>Français</a><a href="../../de/guides/minecraft-server.html" hreflang="de" lang="de">Deutsch</a><a href="../../pt/guides/minecraft-server.html" hreflang="pt" lang="pt">Português</a><a href="../../ru/guides/minecraft-server.html" hreflang="ru" lang="ru">Русский</a></div></details>
+  </nav>
+  <a class="cheer" href="../support.html">Soutenir le créateur</a>
+</div></header>
+
+<main class="wrap guide">
+<nav class="crumbs" aria-label="breadcrumb"><a href="../">Accueil</a> <span>/</span> <a href="./">Guides</a> <span>/</span> <span>Ouvrir son serveur Minecraft à ses amis</span></nav>
+<article>
+  <p class="kicker"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8"/></svg>Guide Micle</p>
+  <h1>Ouvrez votre serveur Minecraft à vos amis (ouverture de ports)</h1>
+  <div class="intro"><p>Pour que des amis hors de chez vous rejoignent un serveur Minecraft qui tourne sur votre PC, il faut une « redirection de ports ». D'habitude, cela se fait dans la page de configuration de la box, mais avec Micle, un seul bouton suffit pour ouvrir et fermer les ports.</p><p class="tip">Si tout le monde est dans la même maison (même Wi-Fi), pas besoin d'ouvrir de ports : utilisez l'adresse locale du PC serveur.</p></div>
+  <div class="need"><h2>Ce qu'il vous faut</h2><ul><li>Un serveur Minecraft (le server.jar officiel pour Java, ou Bedrock Dedicated Server)</li><li>Micle (gratuit)</li><li>Une box ou un routeur avec l'UPnP activé (c'est le cas par défaut sur la plupart)</li></ul></div>
+  <h2>Étapes</h2>
+  <ol class="steps"><li><h3>Lancez le serveur et vérifiez que vous pouvez vous connecter</h3><p>Lancez le serveur et vérifiez que vous pouvez le rejoindre depuis Minecraft sur le même PC avec <code>localhost</code>. Sinon, corrigez d'abord le serveur.</p></li><li><h3>Ouvrez « Network » dans Micle</h3><p>Ouvrez Other → Network dans le menu de gauche de Micle et appuyez sur « Find router ». Quand « Found » s'affiche, tout est prêt.</p></li><li><h3>Choisissez Minecraft dans les jeux courants</h3><p>Dans « Add from common games… », choisissez <b>Minecraft (Java) = port 25565 TCP</b> ou <b>Minecraft (Bedrock) = port 19132 UDP</b>. Le nom et le port se remplissent tout seuls.</p></li><li><h3>Appuyez sur « Open »</h3><p>Quand « Open » s'affiche, le port est ouvert. Si vos amis ne peuvent toujours pas entrer, activez aussi « Allow » dans la colonne Firewall (Windows demande une fois).</p></li><li><h3>Envoyez votre adresse à vos amis</h3><p>Appuyez sur « Copy » à côté de <b>External IP</b> dans la carte Addresses et envoyez-la avec le numéro de port, par ex. <code>203.0.113.5:25565</code>. Vos amis la saisissent dans Multijoueur → Connexion directe.</p></li><li><h3>Fermez à la fin</h3><p>Ne laissez pas les ports ouverts. Activez « Close when Micle closes » pour qu'ils se ferment automatiquement à la fermeture de Micle.</p></li></ol>
+  <h2>En cas de problème</h2><ul><li><b>Box introuvable</b> : l'UPnP est peut-être désactivé. Activez-le en suivant le manuel de votre box.</li><li><b>Ouvert mais vos amis n'entrent pas</b> : certains abonnements bloquent les connexions entrantes (CGNAT, IPv6 seulement, etc.). Pensez à une IP fixe chez votre fournisseur ou à un service comme Minecraft Realms.</li><li><b>« Port déjà utilisé » et le serveur ne démarre pas</b> : « Apps using a port » dans Micle indique quelle appli l'utilise.</li></ul><div class="warn">Ouvrir des ports permet à des personnes extérieures d'atteindre votre PC. Utilisez une liste blanche, gardez le serveur à jour et fermez le port à la fin.</div>
+  <h2>Questions fréquentes</h2><details><summary>Ouvrir des ports, est-ce dangereux ?</summary><p>Seul le logiciel qui utilise ce port (votre serveur Minecraft) est accessible. Avec une liste blanche et en fermant le port ensuite, le risque baisse fortement.</p></details><details><summary>Mon adresse IP change-t-elle ?</summary><p>Selon votre abonnement, elle peut changer, par exemple au redémarrage de la box. Si vos amis ne peuvent plus entrer, revérifiez « External IP » dans Micle.</p></details><details><summary>Les amis sur Bedrock (mobile) peuvent-ils entrer ?</summary><p>Si vous ouvrez un serveur Bedrock (port 19132 UDP), les joueurs Bedrock sur mobile et PC peuvent entrer. Les consoles comme la Switch ont des restrictions sur les serveurs externes.</p></details>
+  <div class="tryit">
+    <img src="../../img/logo.png" alt="" width="48" height="48">
+    <div><h2>Micle est gratuit</h2><p>En plus de l'ouverture de ports, Micle vérifie les règles du pare-feu, les applis qui utilisent un port et la vitesse de votre connexion.</p><div class="dl">
+  <a class="btn pri" data-dl><svg class="bi" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Télécharger gratuitement</span></a>
+  <p class="small">Windows 10 / 11 (64 bits) · Dernière version v<span data-ver></span> · <span data-size></span> Mo · Sans publicité</p>
+</div></div>
+  </div>
+</article>
+<aside class="others"><h2>Autres guides</h2><a href="discord-voice-changer.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Utiliser un modificateur de voix sur Discord</a><a href="noise-removal.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2M7 8v8M11 5v14M15 8v8M19 11v2"/></svg>Supprimer le bruit des appels</a><a href="morse-code.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><path d="M10 12h9"/></svg>Débuter en code Morse</a><a href="stream-overlay.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><circle cx="15.5" cy="10.5" r="2.5"/><path d="M8 21h8"/></svg>Afficher avatar, sous-titres et morceau en stream</a><a href="game-tips.html"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Astuces pratiques en jeu</a></aside>
+</main>
+<footer><div class="wrap">
+  <span>© 2026 Micle · Créé par fuyohaze</span>
+  <a href="./">Guides</a>
+  <a href="../about.html">Le créateur</a>
+  <a href="../../terms.html?lang=en">Conditions</a>
+  <a href="../../privacy.html?lang=en">Confidentialité</a>
+  <a href="../../legal.html?lang=en">Mentions légales (Japon)</a>
+  <a href="https://github.com/micleapp/micle-releases/releases" target="_blank" rel="noopener">Versions</a>
+  <span class="sp"></span>
+  <a class="cheer2" href="../support.html">Soutenir le créateur</a>
+  <a data-mail></a>
+</div></footer>
+<script src="../../site.js"></script>
+</body>
+</html>
