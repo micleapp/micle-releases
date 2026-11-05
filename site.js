@@ -21,6 +21,23 @@ const MICLE = {
     if (MICLE.buy) a.href = MICLE.buy;
     else { a.classList.add('off'); a.removeAttribute('href'); a.querySelectorAll('[data-soon]').forEach(s => s.hidden = false); }
   });
+  // セール（アプリの Sales.cs と同じ決まり。日本時間。永久ライセンスだけ安くなる）
+  const sb = document.querySelector('[data-sale]');
+  if (sb) {
+    const now = Date.now(), jy = new Date(now + 9 * 3600e3).getUTCFullYear();
+    const J = (y, m, d) => Date.UTC(y, m - 1, d) - 9 * 3600e3;
+    const bf = y => { let d = 1; while (new Date(Date.UTC(y, 10, d)).getUTCDay() !== 4) d++; return d + 22; };
+    const list = y => [[0, J(y, 3, 20), J(y, 4, 8), 30, '4/7'], [1, J(y, 7, 21), J(y, 7, 29), 30, '7/28'], [2, J(y, 11, bf(y)), J(y, 11, bf(y) + 4), 50, (d => (d.getUTCMonth() + 1) + '/' + d.getUTCDate())(new Date(Date.UTC(y, 10, bf(y) + 3)))],
+      [3, J(y, 12, 20), J(y, 12, 28), 40, '12/27'], [4, J(y, 12, 28), J(y + 1, 1, 8), 30, '1/7']];
+    const s = [...list(jy - 1), ...list(jy)].find(x => now >= x[1] && now < x[2]);
+    if (s) {
+      const names = JSON.parse(sb.dataset.names || '[]');
+      sb.textContent = sb.dataset.fmt.replace('{name}', names[s[0]] || '').replace('{pct}', s[3]).replace('{end}', s[4]);
+      sb.hidden = false;
+      const life = document.querySelector('[data-life]');
+      if (life) { const p = Math.round(9800 * (100 - s[3]) / 1000) * 10; life.innerHTML = '<s>¥9,800</s>¥' + p.toLocaleString('en-US') + ' ' + life.querySelector('small').outerHTML; }
+    }
+  }
   const box = document.querySelector('[data-donate] .ways');
   if (box && MICLE.donate.length) {
     box.innerHTML = MICLE.donate.map(d => `<a class="btn sec" href="${d.url}" target="_blank" rel="noopener">${d.name}</a>`).join('');
