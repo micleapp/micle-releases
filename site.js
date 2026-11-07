@@ -4,7 +4,8 @@ const MICLE = {
   sizeMB: 83,          // Micle.exe の大きさ（MB）
   download: 'https://github.com/micleapp/micle-releases/releases/latest/download/Micle.exe',
   buy: '',
-  supabase: {url: '', anon: ''},   // アカウント（Supabase のプロジェクトの URL と anon キー。公開してよい鍵）             // Lemon Squeezy の購入ページ（できたら入れる。空の間は「準備中」）
+  supabase: {url: '', anon: ''},
+  releaseStart: '',   // 正式リリースの日（例 '2026-11-28'）。入れるとその日から1か月リリース記念セール（Sales.cs と同じ）   // アカウント（Supabase のプロジェクトの URL と anon キー。公開してよい鍵）             // Lemon Squeezy の購入ページ（できたら入れる。空の間は「準備中」）
   contact: 'https://docs.google.com/forms/d/e/1FAIpQLSfHNVmtSDxUMFfSJxF3mRXcln_wpAh4bhPPAPuHX0YEeMHXQA/viewform',
   mail: 'micleapp@gmail.com',
   // クリエイターを応援する方法（できたら足す。例：{name: 'Ko-fi', url: 'https://ko-fi.com/…'}）。空の間は「準備中」
@@ -30,8 +31,12 @@ const MICLE = {
     const bf = y => { let d = 1; while (new Date(Date.UTC(y, 10, d)).getUTCDay() !== 4) d++; return d + 22; };
     const list = y => [[0, J(y, 3, 20), J(y, 4, 8), 30, '4/7'], [1, J(y, 7, 21), J(y, 7, 29), 30, '7/28'], [2, J(y, 11, bf(y)), J(y, 11, bf(y) + 4), 50, (d => (d.getUTCMonth() + 1) + '/' + d.getUTCDate())(new Date(Date.UTC(y, 10, bf(y) + 3)))],
       [3, J(y, 12, 20), J(y, 12, 28), 40, '12/27'], [4, J(y, 12, 28), J(y + 1, 1, 8), 30, '1/7']];
-    const rel = [5, J(2026, 11, 7), J(2027, 1, 1), 55, '12/31'];   // リリース記念（Sales.cs と同じ）
-    const s = [...list(jy - 1), ...list(jy), rel].filter(x => now >= x[1] && now < x[2]).sort((a, b) => b[3] - a[3])[0];
+    let rel = null;   // リリース記念（正式リリースの日から1か月・Sales.cs と同じ）
+    if (MICLE.releaseStart) {
+      const [ry, rm, rd] = MICLE.releaseStart.split('-').map(Number), end = new Date(Date.UTC(ry, rm, rd - 1));
+      rel = [5, J(ry, rm, rd), J(ry, rm + 1, rd), 55, (end.getUTCMonth() + 1) + '/' + end.getUTCDate()];
+    }
+    const s = [...list(jy - 1), ...list(jy), ...(rel ? [rel] : [])].filter(x => now >= x[1] && now < x[2]).sort((a, b) => b[3] - a[3])[0];
     if (s) {
       const names = JSON.parse(sb.dataset.names || '[]');
       sb.textContent = sb.dataset.fmt.replace('{name}', names[s[0]] || '').replace('{pct}', s[3]).replace('{end}', s[4]);
