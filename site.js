@@ -30,7 +30,8 @@ const MICLE = {
     const bf = y => { let d = 1; while (new Date(Date.UTC(y, 10, d)).getUTCDay() !== 4) d++; return d + 22; };
     const list = y => [[0, J(y, 3, 20), J(y, 4, 8), 30, '4/7'], [1, J(y, 7, 21), J(y, 7, 29), 30, '7/28'], [2, J(y, 11, bf(y)), J(y, 11, bf(y) + 4), 50, (d => (d.getUTCMonth() + 1) + '/' + d.getUTCDate())(new Date(Date.UTC(y, 10, bf(y) + 3)))],
       [3, J(y, 12, 20), J(y, 12, 28), 40, '12/27'], [4, J(y, 12, 28), J(y + 1, 1, 8), 30, '1/7']];
-    const s = [...list(jy - 1), ...list(jy)].find(x => now >= x[1] && now < x[2]);
+    const rel = [5, J(2026, 11, 7), J(2027, 1, 1), 55, '12/31'];   // リリース記念（Sales.cs と同じ）
+    const s = [...list(jy - 1), ...list(jy), rel].filter(x => now >= x[1] && now < x[2]).sort((a, b) => b[3] - a[3])[0];
     if (s) {
       const names = JSON.parse(sb.dataset.names || '[]');
       sb.textContent = sb.dataset.fmt.replace('{name}', names[s[0]] || '').replace('{pct}', s[3]).replace('{end}', s[4]);
